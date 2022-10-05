@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+
+  <link rel="stylesheet" href="./styles.css"></link>
+
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+
+  <main>
+
+    <section class="bg-center bg-scroll bg-cover flex hero h-96 mx-auto items-center justify-end overflow-hidden relative" style="background-image: url(./hero-background.jpeg)">
+      <div class="relative z-50 mr-40">
+        <h1 class="text-4xl font-black text-white">Utes Stats</h1>
+        <p class="text-white font-medium">I have no idea what I'm doing!</p>
+      </div>
+    </section>
+
+    <div class="container mx-auto px-4">
+
+      <section class="py-12" aria-label="Team Statistics">
+        <h2 class="text-2xl font-black text-center mb-12 section-header">2021-2022 Stat Comparisons</h2>
+        <div class="flex justify-around">
+          <div class="stat-container">
+            <h2 class="font-black">Pass Completions</h2>
+            <canvas id="passCompletions"></canvas>
+          </div>
+
+          <div class="stat-container">
+            <h2 class="font-black">Pass Attempts</h2>
+            <canvas id="passAttempts"></canvas>
+          </div>
+        </div>
+      </section>
+
+      <section class="py-12" aria-label="Team Game Schedule">
+        <h2 class="text-2xl font-black text-center mb-12 section-header">Game Schedule</h2>
+        <div class="items-center flex justify-evenly">
+          <div class="text-center">
+            <h2 id="utahScore" class="text-4xl font-black text-red">36</h2>
+            <h3 id="opponent" class="text-xl uppercase font-black">Utah</h3>
+          </div>
+          <div class="text-center">
+            <h2 class="text-4xl uppercase font-black game-versus">VS</h2>
+            <h3 class="text-2xl uppercase font-black">Sep 3, 2022</h3>
+          </div>
+          <div class="text-center">
+            <h2 id="opponentScore" class="text-4xl font-black text-red">29</h2>
+            <h3 id="opponent" class="text-xl uppercase font-black">Florida</h3>
+          </div>
+        </div>
+      </section>
+
+    </div>
+
+  </main>
+
+  <footer class="text-center py-12 text-white">
+    <p>* All this data is Web Scraped from <a class="text-red font-medium" href="https://www.sports-reference.com">Sports Reference</a></p>
+  </footer>
+
+  <script src="./db.js"></script>
+  <script src="./scripts.js"></script>
+</body>
+</html>
