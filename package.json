@@ -4,6 +4,7 @@
   "description": "",
   "main": "scripts.js",
   "scripts": {
+    "start": "npm run test && node scraper.js",
     "test": "jest"
   },
   "keywords": [],
