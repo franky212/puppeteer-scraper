@@ -62,6 +62,30 @@ const passAttempts = new Chart(document.getElementById('passAttempts'), {
   }
 });
 
+
+
 dbData.games.forEach( game => {
-  console.log( game );
+  const container = document.getElementById('game-panel-container');
+
+  let gamePanelHtml = '<div class="drop-shadow flex game-panel items-center text-white justify-evenly">';
+
+  gamePanelHtml += '<div class="text-center">';
+  gamePanelHtml += `<h2 id="utahScore" class="text-4xl font-black">${game.utah_score !== 0 ? game.utah_score : 'TBA'}</h2>`;
+  gamePanelHtml += '<h3 id="utah" class="text-xl uppercase font-black">Utah</h3>';
+  gamePanelHtml += '</div>';
+
+  gamePanelHtml += '<div class="text-center">';
+  gamePanelHtml += '<h2 class="text-4xl uppercase font-black game-versus">VS</h2>';
+  gamePanelHtml += `<h3 class="text-2xl uppercase font-black">${game.date}</h3>`;
+  gamePanelHtml += `<p class="text-md font-black">${game.win ? 'Win' : (!game.gameHappened ? 'TBA' : 'Loss')}</p>`;
+  gamePanelHtml += '</div>';
+
+  gamePanelHtml += '<div class="text-center">';
+  gamePanelHtml += `<h2 id="opponentScore" class="text-4xl font-black">${game.opponent_points !== 0 ? game.opponent_points : 'TBA'}</h2>`;
+  gamePanelHtml += `<h3 id="opponent" class="text-xl uppercase font-black">${game.opponent}</h3>`;
+  gamePanelHtml += '</div>';
+
+  gamePanelHtml += '</div>';
+
+  container.insertAdjacentHTML('beforeend', gamePanelHtml);
 } );

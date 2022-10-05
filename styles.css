@@ -1,5 +1,6 @@
 html, body {
   background-color: #f8f8f8;
+  color: #18191B;
 }
 
 .hero:before {
@@ -28,12 +29,36 @@ html, body {
   content: '';
   width: 4rem;
   background-color: #c00;
-  height: 1px;
+  height: 4px;
   margin: 1rem auto;
 }
 
-.game-versus {
-  color: #c00;
+.game-panel {
+  border: 1px solid #efefef;
+  background-color: #c00;
+  padding: 1.5rem 0;
+  transform: skew(-45deg);
+  margin: 2rem 0;
+}
+
+#game-panel-container:nth-child(2) .game-panel {
+  margin-top: 0;
+}
+
+#game-panel-container .game-panel:last-child {
+  margin-bottom: 0;
+}
+
+/* #game-panel-container:nth-child(2) .game-panel {
+  margin-top: 0;
+}
+
+#game-panel-container:last-child .game-panel {
+  margin-bottom: 0;
+} */
+
+.game-panel div {
+  transform: skew(45deg);
 }
 
 footer {

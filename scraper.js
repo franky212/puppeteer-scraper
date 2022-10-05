@@ -103,11 +103,22 @@ puppeteer
       // }
       dates.forEach( (date, index) => {
         let key = opponents[index].textContent.replace( /([([)0-9^\s])/g, '' ).toLowerCase().trim();
+
+        const gameDate = new Date(date.textContent);
+        let currentDate = new Date();
+        var dd = String(currentDate.getDate()).padStart(2, '0');
+        var mm = String(currentDate.getMonth() + 1).padStart(2, '0'); //January is 0!
+        var yyyy = currentDate.getFullYear();
+
+        currentDate = new Date(`${mm} ${dd}, ${yyyy}`);
+
         team.games.push({
             opponent: key,
             date: date.textContent,
             utah_score: utah_score[index].textContent !== '' ? Number(utah_score[index].textContent) : 0,
-            opponent_points: opponent_points[index].textContent !== '' ? Number(opponent_points[index].textContent) : 0
+            opponent_points: opponent_points[index].textContent !== '' ? Number(opponent_points[index].textContent) : 0,
+            win: Number(utah_score[index].textContent) > Number(opponent_points[index].textContent) ? true : false,
+            gameHappened: currentDate.getTime() > gameDate.getTime()
           }
         );
       } );
