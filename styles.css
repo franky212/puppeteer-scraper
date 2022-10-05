@@ -1,3 +1,7 @@
+html, body {
+  background-color: #f8f8f8;
+}
+
 .hero:before {
   display: block;
   background-color: #c00;
@@ -15,8 +19,8 @@
 
 .stat-container {
   border: 1px solid #efefef;
-  padding: 1rem;
-  border-radius: 0.25rem;
+  padding: 1.5rem;
+  border-radius: 0.75rem;
 }
 
 .section-header:after {
