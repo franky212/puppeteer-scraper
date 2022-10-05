@@ -1,5 +1,3 @@
-console.log( dbData );
-
 const passCompletions = new Chart(document.getElementById('passCompletions'), {
   type: 'bar',
   data: {

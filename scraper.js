@@ -2,6 +2,9 @@ const puppeteer = require('puppeteer-extra');
 const { writeFile } = require('fs').promises;
 
 /*************************************
+ * 
+ * LIVE EXAMPLE : https://puppeteer-scraping-example.surge.sh/
+ * 
  * THIS IS WHAT MAKES IT WORK
  * SHOUT OUT JORDAN HANSEN - https://cobaltintelligence.com/blog/avoid-being-blocked-with-puppeteer/
  * ALSO ANOTHER WAY TO BLOCK ALL ADS IS TO INTERCEPT ALL REQUESTS, AND FILTER ALL REQUESTS FOR THESE DOMAINS:
